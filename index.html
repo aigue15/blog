@@ -1,1 +1,289 @@
-<meta http-equiv="refresh" content="0; URL='https://egedincer.blogspot.com'" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex's Blog – Apple-Style Design</title>
+    <style>
+        :root {
+            --apple-black: #1d1d1f;
+            --apple-blue: #2997ff;
+            --apple-gray: #86868b;
+            --glass-blur: 20px;
+            --section-spacing: 6rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.15;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Apple 2025 Header */
+        .apple-header {
+            background: rgba(0, 0, 0, 0.88);
+            backdrop-filter: saturate(180%) blur(var(--glass-blur));
+            height: 52px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10000;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .nav-container {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 22px;
+            height: 100%;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .apple-logo {
+            fill: #fff;
+            width: 20px;
+            height: 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.8rem;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.85);
+            font-size: 13px;
+            font-weight: 400;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        /* Hero Section - Apple Intelligence Style */
+        .hero-section {
+            padding-top: 100px;
+            background: linear-gradient(150deg, #0a0a0a 0%, #000 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 10rem 22px 4rem;
+        }
+
+        .hero-headline {
+            font-size: 84px;
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            background: linear-gradient(90deg, #fff 30%, rgba(255,255,255,0.5));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+            line-height: 1.05;
+        }
+
+        .hero-subhead {
+            font-size: 28px;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 3rem;
+            font-weight: 400;
+            max-width: 800px;
+        }
+
+        /* Article Grid - Apple Pro Display Style */
+        .article-grid {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 8rem 22px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 24px;
+            padding: 2.5rem;
+            backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid rgba(255,255,255,0.12);
+            transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .article-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .card-date {
+            color: var(--apple-blue);
+            font-size: 13px;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .card-excerpt {
+            color: rgba(255,255,255,0.7);
+            font-size: 17px;
+            line-height: 1.4;
+        }
+
+        /* Apple-Style Footer */
+        .global-footer {
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(var(--glass-blur));
+            border-top: 1px solid rgba(255,255,255,0.12);
+            padding: 4rem 0;
+        }
+
+        .footer-content {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 22px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-section {
+            flex: 1;
+        }
+
+        .footer-heading {
+            color: var(--apple-gray);
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 12px;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        @media (max-width: 734px) {
+            .hero-headline {
+                font-size: 48px;
+            }
+            
+            .article-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="apple-header">
+        <nav class="nav-container">
+            <div class="nav-wrapper">
+                <svg class="apple-logo" viewBox="0 0 24 24">
+                    <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.11C14.21 5.87 13.07 6.5 12 6.39C11.93 5.22 12.45 4.08 13 3.5Z"/>
+                </svg>
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-link">Articles</a></li>
+                    <li><a href="#" class="nav-link">About</a></li>
+                    <li><a href="#" class="nav-link">Archive</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-headline">Design & Technology<br>in the Age of Intelligence</h1>
+                <p class="hero-subhead">Exploring the intersection of human creativity and machine learning through the lens of Apple's latest innovations.</p>
+            </div>
+        </section>
+
+        <div class="article-grid">
+            <article class="article-card">
+                <div class="card-date">JUNE 10, 2025</div>
+                <h2 class="card-title">The Evolution of Liquid Glass Design</h2>
+                <p class="card-excerpt">Deep dive into Apple's latest design language and its implications for interactive experiences.</p>
+            </article>
+
+            <article class="article-card">
+                <div class="card-date">JUNE 9, 2025</div>
+                <h2 class="card-title">SwiftUI 7: Revolutionizing App Development</h2>
+                <p class="card-excerpt">How declarative programming is transforming cross-platform development workflows.</p>
+            </article>
+
+            <article class="article-card">
+                <div class="card-date">JUNE 8, 2025</div>
+                <h2 class="card-title">Privacy-First AI: Apple's New Framework</h2>
+                <p class="card-excerpt">Examining the technical implementation of on-device machine learning systems.</p>
+            </article>
+        </div>
+    </main>
+
+    <footer class="global-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-heading">BLOG</h3>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Latest Posts</a></li>
+                    <li><a href="#" class="footer-link">Popular Articles</a></li>
+                    <li><a href="#" class="footer-link">Writing Archive</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-heading">CONNECT</h3>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Twitter</a></li>
+                    <li><a href="#" class="footer-link">GitHub</a></li>
+                    <li><a href="#" class="footer-link">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 class="footer-heading">LEGAL</h3>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Privacy Policy</a></li>
+                    <li><a href="#" class="footer-link">Terms of Use</a></li>
+                    <li><a href="#" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
